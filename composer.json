@@ -23,7 +23,7 @@
         "php-di/php-di": "^6.4",
         "slim/psr7": "^1.6",
         "slim/slim": "^4.11",
-        "manguto/lib": "^1.0",
+        "manguto/lib": "^1.0"
     },
     "require-dev": {
         "jangregor/phpstan-prophecy": "^1.0.0",
