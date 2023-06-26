@@ -9,6 +9,11 @@ use Monolog\Logger;
 
 return function (ContainerBuilder $containerBuilder) {
 
+	// Should be set to true in production
+	if (APP_IN_PRODUCTION) {
+		$containerBuilder->enableCompilation(COMPILATION_DIR);
+	}
+	
     // Global Settings Object
     $containerBuilder->addDefinitions([
         SettingsInterface::class => function () {

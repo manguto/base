@@ -12,12 +12,12 @@ use Slim\Factory\ServerRequestCreatorFactory;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-// Set up APP
-$setup = require __DIR__ . '/../app/setup.php';
-$setup(__DIR__);
-
 // Instantiate PHP-DI ContainerBuilder
 $containerBuilder = new ContainerBuilder();
+
+if (false) { // Should be set to true in production
+	$containerBuilder->enableCompilation(__DIR__ . '/../var/cache');
+}
 
 // Set up settings
 $settings = require __DIR__ . '/../app/settings.php';
@@ -37,12 +37,6 @@ $container = $containerBuilder->build();
 // Instantiate the app
 AppFactory::setContainer($container);
 $app = AppFactory::create();
-
-// App extra configuration (base_path, twig, etc.)
-$application = require __DIR__ . '/../app/application.php';
-$application($app);
-
-// App callable resolver
 $callableResolver = $app->getCallableResolver();
 
 // Register middleware

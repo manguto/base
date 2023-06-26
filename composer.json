@@ -19,11 +19,12 @@
     "require": {
         "php": "^7.4 || ^8.0",
         "ext-json": "*",
+        "manguto/lib": "^1.0",
         "monolog/monolog": "^2.9",
         "php-di/php-di": "^6.4",
         "slim/psr7": "^1.6",
         "slim/slim": "^4.11",
-        "manguto/lib": "^1.0"
+        "slim/twig-view": "^3.3"
     },
     "require-dev": {
         "jangregor/phpstan-prophecy": "^1.0.0",
