@@ -21,14 +21,16 @@ return function (App $app){
 	 * });
 	 */
 	{
-		$app->get('/hello', function (Request $request, Response $response){
-			$response->getBody()->write('Hello world!');
+		$app->redirect('/', 'home');
+	}
+	{
+		$app->get('/home', ViewFrontendHomeAction::class)->setName('frontend_home');
+	}
+	{
+		$app->get('/{var}', function (Request $request, Response $response, array $args){
+			
+			$response->getBody()->write('Hello world! ' . $args['var']);
 			return $response;
 		});
 	}
-	{
-		$app->redirect('/', 'home');
-		$app->get('/home', ViewFrontendHomeAction::class)->setName('frontend_home');
-	}
-	
 };
