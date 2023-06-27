@@ -6,10 +6,15 @@ return function (string $__DIR__){
 		define('APP_IN_PRODUCTION', false);
 	}
 	// ####################################################################################################
+	{
+		define('APP_TITLE','APP'); 
+		define('APP_HEADER_TITLE','APP'); 
+	}
+	// ####################################################################################################
 	{ // TWIG (TEMPLATES)
 		{ // directories
-			define('TWIG_TEMPLATES_DIR', $__DIR__ . '/../templates');
-			define('TWIG_TEMPLATES_CACHE', $__DIR__ . '/../cache');
+			define('TWIG_TEMPLATES_DIR', $__DIR__ . '/../templates'); 
+			define('TWIG_TEMPLATES_CACHE', $__DIR__ . '/../cache'); 
 		}
 	}
 	// ####################################################################################################

@@ -17,3 +17,7 @@ cache.properties
 # Composer
 composer.phar
 composer.lock
+# Eclipse project files
+.buildpath
+.project
+.settings/
